@@ -10,7 +10,7 @@ const Termine = () => {
   const [termine, setTermine] = useState([]);
 
   useEffect(() => {
-    axios.get('https://doctrina-mobilis.de/api/termine')
+    axios.get('/api/termine')
       .then(response => {
         setTermine(response.data);
       })
