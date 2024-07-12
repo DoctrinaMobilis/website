@@ -1,0 +1,44 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.login form {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: 100%;
+}
+
+.input-field .MuiOutlinedInput-root {
+  background-color: var(--custom-white);
+  color: black;
+}
+
+.login-button  {
+  background-color: var(--accept-color)!important;
+  color: var(--custom-white) !important;
+  font-weight: bold !important;
+}
+
+.login-button:hover {
+  background-color: var(--custom-white);
+}
+
+.login p {
+  margin: 0;
+  background-color: var(--accent-color);
+  color: var(--warning-color);
+}
+
+.register-link {
+  color: var(--custom-white) !important;
+  font-size: 0.875rem;
+  text-decoration: underline !important;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}

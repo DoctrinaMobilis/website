@@ -1,0 +1,11 @@
+/* src/colors.css */
+:root {
+    --primary-color: #012B66;
+    --secondary-color: #BED0EF;
+    --accent-color: #9CB8E7;
+    --warning-color: #BA1215;
+    --accept-color: #1E9935;
+    --text-color: #333333;
+    --custom-white: #f8f2f2;
+  }
+  

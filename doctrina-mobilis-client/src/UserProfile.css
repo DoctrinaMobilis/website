@@ -1,0 +1,72 @@
+/* src/UserProfile.css */
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+  }
+  
+  .profile-pic-wrapper {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  .profile-pic-large {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-pic-upload-button {
+    color: var(--primary-color); /* Referenziert die Farbe aus colors.css */
+  }
+  
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 600px; /* Angepasste maximale Breite */
+    justify-content: center; /* Zentriert die Formgruppe */
+  }
+  
+  .form-group label {
+    flex: 0 0 150px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .profile-input {
+    flex: 1;
+    min-width: 200px; /* Mindestbreite */
+    max-width: 1000px; /* Höchstbreite */
+    background-color: var(--custom-white); /* Weißer Hintergrund für die Eingabefelder */
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1em;
+  }
+  
+  .save-button {
+    background-color: var(--accept-color) !important;
+    color: var(--custom-white) !important;
+    font-weight: bold !important;
+  }
+  
+  .cancel-button {
+    background-color: var(--warning-color) !important;
+    color: var(--custom-white) !important;
+    font-weight: bold !important;
+  }
+  

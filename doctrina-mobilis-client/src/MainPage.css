@@ -1,0 +1,67 @@
+/* src/MainPage.css */
+#container {
+  display: grid;
+  grid-template-areas: 
+    "mainNav haupt aside"
+    "mainNav haupt aside"
+    "mainNav haupt aside";
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: auto 1fr; /* Adjust the header height */
+  gap: 10px;
+  height: 100vh; /* Ensures the container takes the full height of the viewport */
+}
+
+header, nav, main, aside {
+  border: 1px solid var(--custom-white);
+  background-color: var(--secondary-color);
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  grid-area: mainNav;
+  overflow-y: auto; /* Ensure the nav is scrollable */
+}
+
+main {
+  grid-area: haupt;
+  overflow-y: auto; /* Make the main content area scrollable */
+  display: flex;
+  justify-content: center; /* Center the main content */
+  align-items: flex-start; /* Align content to the top */
+}
+
+#termine {
+  grid-area: aside;
+  overflow-y: auto; /* Ensure the aside is scrollable */
+}
+
+/* Breakpoint to hide the aside section first */
+@media (max-width: 1000px) {
+  #container {
+    grid-template-areas: 
+      "mainNav haupt haupt"
+      "mainNav haupt haupt"
+      "mainNav haupt haupt";
+    grid-template-columns: 20% 80%;
+  }
+
+  #termine {
+    display: none;
+  }
+}
+
+/* Breakpoint to hide the navigation section next */
+@media (max-width: 800px) {
+  #container {
+    grid-template-areas: 
+      "haupt haupt haupt"
+      "haupt haupt haupt"
+      "haupt haupt haupt";
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+}

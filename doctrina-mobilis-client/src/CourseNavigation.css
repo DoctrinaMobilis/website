@@ -1,0 +1,23 @@
+.course-navigation {
+  width: 100%;
+  max-width: 360px;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* List background color */
+.course-navigation .MuiList-root {
+  background-color: var(--accent-color);
+}
+
+/* Make courses bold */
+.course-navigation .MuiListItem-root {
+  font-weight: bold;
+}
+
+/* Ensure nested items are not bold */
+.course-navigation .MuiCollapse-root .MuiListItem-root {
+  font-weight: normal;
+  padding-left: 32px; /* Indent nested items */
+  background-color: var(--secondary-color);
+}

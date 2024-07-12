@@ -1,0 +1,69 @@
+/* src/Header.css */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  min-height: 64px; /* Standardhöhe für Material-UI-Toolbars */
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.logo-image {
+  max-width: 128px; /* Passe die Größe des Logos an */
+  max-height: 128px; /* Passe die Größe des Logos an */
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /* Logo ist jetzt weiß */
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.center-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-grow: 1;
+}
+
+.center-section .MuiButton-root {
+  font-size: 1.5em;
+  padding: 0.75em 1.5em;
+  font-weight: bold;
+}
+
+.right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+}
+
+.right-section a {
+  color: var(--custom-white);
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.user-section Button {
+  font-weight: bold;
+  background-color: var(--accept-color) !important;
+ 
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 40%;
+  object-fit: cover;
+}
