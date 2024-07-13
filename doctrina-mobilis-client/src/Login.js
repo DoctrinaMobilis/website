@@ -14,7 +14,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://doctrina-mobilis.de/api/login', {
+      const response = await fetch('https://doctrina-mobilis.de/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
