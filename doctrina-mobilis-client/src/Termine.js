@@ -12,7 +12,11 @@ const Termine = () => {
   useEffect(() => {
     axios.get('/api/termine')
       .then(response => {
-        setTermine(response.data);
+        if (Array.isArray(response.data)) {
+          setTermine(response.data);
+        } else {
+          console.error('Unexpected response format:', response.data);
+        }
       })
       .catch(error => {
         console.error('Error fetching data:', error);
