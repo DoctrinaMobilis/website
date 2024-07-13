@@ -43,6 +43,7 @@ app.use('/api', testRoute);
 
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
+  console.log('Login attempt:', username, password);  // Füge dies hinzu
   try {
     const user = await User.findOne({ where: { username } });
 

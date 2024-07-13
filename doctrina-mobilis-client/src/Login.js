@@ -23,6 +23,7 @@ function Login() {
       });
 
       const data = await response.json();
+      console.log('Response data:', data);  // Füge dies hinzu
       if (response.ok) {
         login({ name: username, profilePic: 'path/to/profile.jpg' }); // Beispiel-Benutzerdaten
         setMessage('Login successful');
