@@ -3,10 +3,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var cors = require('cors');
+var cors = require('cors'); // Stelle sicher, dass du CORS importierst
+var User = require('./models/user');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var apiRoutes = require('./routes/apiRoutes'); // Importieren der API-Routen
+var termineRouter = require('./routes/termine');
+const testRoute = require('./routes/testRoute');
 
 var app = express();
 
@@ -21,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
+// CORS-Konfiguration
 app.use(cors({
   origin: ['https://doctrina-mobilis.de', 'https://www.doctrina-mobilis.de'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -33,15 +36,31 @@ app.use((req, res, next) => {
   next();
 });
 
-// API routes should be registered before static files
-app.use('/api', apiRoutes); // Verwenden der API-Routen
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/api', termineRouter);
+app.use('/api', testRoute);
 
-// Middleware to serve static files from build directory
-app.use(express.static(path.join(__dirname, '../build')));
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const user = await User.findOne({ where: { username } });
 
-// Handle React routing, return all requests to React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+    if (!user) {
+      console.log('User not found');
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+
+    if (user.password !== password) {
+      console.log('Password does not match');
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+
+    res.json({ message: 'Login successful' });
+  } catch (err) {
+    console.error('Error during login:', err);
+    res.status(500).json({ message: 'An error occurred during login' });
+  }
 });
 
 // catch 404 and forward to error handler
