@@ -4,11 +4,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var User = require('./models/user');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var termineRouter = require('./routes/termine');
-const testRoute = require('./routes/testRoute'); // Korrigierter Pfad zur Testroute
+var apiRoutes = require('./routes/apiRoutes'); // Importieren der API-Routen
 
 var app = express();
 
@@ -35,31 +33,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api/termine', termineRouter);
-app.use('/api/test', testRoute); // Registriere die Testroute
+// API routes should be registered before static files
+app.use('/api', apiRoutes); // Verwenden der API-Routen
 
-app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  try {
-    const user = await User.findOne({ where: { username } });
+// Middleware to serve static files from build directory
+app.use(express.static(path.join(__dirname, '../build')));
 
-    if (!user) {
-      console.log('User not found');
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-
-    if (user.password !== password) {
-      console.log('Password does not match');
-      return res.status(401).json({ message: 'Invalid username or password' });
-    }
-
-    res.json({ message: 'Login successful' });
-  } catch (err) {
-    console.error('Error during login:', err);
-    res.status(500).json({ message: 'An error occurred during login' });
-  }
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
 // catch 404 and forward to error handler

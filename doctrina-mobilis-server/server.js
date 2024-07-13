@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const sequelize = require('./config/database');
-const app = express();
+const app = require('./app'); // Verwenden Sie die aktualisierte app.js
 const port = process.env.PORT || 8080;
 
 // SSL-Zertifikatsdateien laden
@@ -12,17 +12,6 @@ const sslOptions = {
   cert: fs.readFileSync('/etc/ssl/private/doctrina-mobilis.crt'),
   ca: fs.readFileSync('/etc/ssl/private/doctrina-mobilis.ca-bundle')
 };
-
-// Middleware to serve static files
-app.use(express.static(path.join(__dirname, '../build')));
-
-// API routes
-app.use('/api', require('./routes/apiRoutes')); // API-Routen hinzufügen
-
-// Handle React routing, return all requests to React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
-});
 
 // Test der Datenbankverbindung und Start des Servers
 sequelize.authenticate()
