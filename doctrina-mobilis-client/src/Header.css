@@ -1,10 +1,9 @@
-/* src/Header.css */
 .toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
-  min-height: 64px; /* Standardhöhe für Material-UI-Toolbars */
+  min-height: 64px;
 }
 
 .left-section {
@@ -14,10 +13,10 @@
 }
 
 .logo-image {
-  max-width: 128px; /* Passe die Größe des Logos an */
-  max-height: 128px; /* Passe die Größe des Logos an */
+  max-width: 128px;
+  max-height: 128px;
   margin-right: 10px;
-  filter: brightness(0) invert(1); /* Logo ist jetzt weiß */
+  filter: brightness(0) invert(1);
 }
 
 .title {
@@ -58,7 +57,6 @@
 .user-section Button {
   font-weight: bold;
   background-color: var(--accept-color) !important;
- 
 }
 
 .profile-pic {
@@ -66,4 +64,27 @@
   height: 80px;
   border-radius: 40%;
   object-fit: cover;
+}
+
+/* New breakpoint for mobile devices */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-section, .center-section, .right-section {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .center-section {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
 }

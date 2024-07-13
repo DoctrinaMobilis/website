@@ -1,50 +1,66 @@
 .termine {
-    padding: 1em;
-    background-color: var(--accent-color);
-    overflow-y: auto;
-    height: 100%;
-  }
-  
+  padding: 1em;
+  background-color: var(--accent-color);
+  overflow-y: auto;
+  height: 100%;
+}
+
+.termin-kachel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid var(--custom-white);
+  padding: 1em;
+  background-color: var(--custom-white);
+  color: var(--text-color);
+}
+
+.datum-bereich {
+  text-align: center;
+  margin-right: 1em;
+}
+
+.wochentag {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.datum {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.uhrzeit {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.kurs-bereich {
+  flex-grow: 1;
+}
+
+.kursname {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.ort {
+  font-size: 1em;
+}
+
+/* New breakpoint for mobile devices */
+@media (max-width: 600px) {
   .termin-kachel {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-    border: 1px solid var(--custom-white);
-    padding: 1em;
-    background-color: var(--custom-white);
-    color: var(--text-color);
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .datum-bereich {
-    text-align: center;
-    margin-right: 1em;
+    margin-right: 0;
+    margin-bottom: 0.5em;
   }
-  
-  .wochentag {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .datum {
-    font-size: 0.9em;
-    font-weight: bold;
-  }
-  
-  .uhrzeit {
-    font-size: 0.8em;
-    font-weight: bold;
-  }
-  
+
   .kurs-bereich {
-    flex-grow: 1;
+    width: 100%;
   }
-  
-  .kursname {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .ort {
-    font-size: 1em;
-  }
-  
+}
