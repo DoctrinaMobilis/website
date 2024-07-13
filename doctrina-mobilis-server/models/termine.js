@@ -34,6 +34,7 @@ const Termin = sequelize.define('Termin', {
   timestamps: false
 });
 
-Termin.belongsTo(Kurs, { foreignKey: 'kurs_id' });
+// Definiere den Alias explizit hier
+Termin.belongsTo(Kurs, { foreignKey: 'kurs_id', as: 'Kurs' });
 
 module.exports = Termin;
