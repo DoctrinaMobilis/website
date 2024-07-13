@@ -14,18 +14,18 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://doctrina-mobilis.de/login', {
+      const response = await fetch('https://doctrina-mobilis.de/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, password })
       });
-
+  
       const data = await response.json();
-      console.log('Response data:', data);  // Füge dies hinzu
+      console.log('Response data:', data);
       if (response.ok) {
-        login({ name: username, profilePic: 'path/to/profile.jpg' }); // Beispiel-Benutzerdaten
+        login({ name: username, profilePic: 'path/to/profile.jpg' });
         setMessage('Login successful');
       } else {
         setMessage(data.message || 'Invalid login credentials');
@@ -35,6 +35,7 @@ function Login() {
       console.error('Error:', error);
     }
   };
+  
 
   return (
     <div className="login">
