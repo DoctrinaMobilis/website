@@ -37,8 +37,8 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api', termineRouter);
-app.use('/api', testRoute); // Registriere die Testroute
+app.use('/api/termine', termineRouter);
+app.use('/api/test', testRoute); // Registriere die Testroute
 
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
