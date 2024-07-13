@@ -1,11 +1,9 @@
-// app.js
-
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var cors = require('cors');
+var cors = require('cors'); // Stelle sicher, dass du CORS importierst
 var User = require('./models/user');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -16,7 +14,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -45,6 +43,7 @@ app.use('/api', testRoute);
 
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
+  console.log('Login attempt:', username, password);  // Füge dies hinzu
   try {
     const user = await User.findOne({ where: { username } });
 
@@ -75,7 +74,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
-  res.json({ error: res.locals.message });
+  res.render('error');
 });
 
 module.exports = app;
