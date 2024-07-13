@@ -39,7 +39,7 @@ const Termine = () => {
                 <div className="uhrzeit">{termin.uhrzeit}</div>
               </div>
               <div className="kurs-bereich">
-                <div className="kursname">{termin.Kurs.kursname}</div>
+              <div className="kursname">{termin.Kurs ? termin.Kurs.kursname : 'Kein Kursname'}</div>
                 <div className="ort">{termin.ort}</div>
               </div>
             </div>

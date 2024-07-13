@@ -8,7 +8,8 @@ router.get('/termine', async (req, res) => {
     const termine = await Termin.findAll({
       include: {
         model: Kurs,
-        attributes: ['kursname']
+        attributes: ['kursname'],
+        as: 'Kurs' // Wichtig: Stellen Sie sicher, dass der Alias korrekt ist
       },
       order: [
         ['datum', 'ASC'],
