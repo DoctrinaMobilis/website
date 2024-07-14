@@ -4,16 +4,16 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#012B66', // Verwende hexadezimale Farbcodes direkt
+      main: '#012B66', // --primary-color
     },
     secondary: {
-      main: '#9CB8E7', // Verwende hexadezimale Farbcodes direkt
+      main: '#9CB8E7', // --accent-color:
     },
     background: {
-      default: '#BED0EF', // Verwende hexadezimale Farbcodes direkt
+      default: '#BED0EF', // --secondary-color
     },
     text: {
-      primary: '#333333', // Verwende hexadezimale Farbcodes direkt
+      primary: '#333333', // schwarz
     },
   },
 });
