@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   padding: 0 1em;
-  min-height: 128px; /* Adjusted height to fit both header sections */
+  min-height: 90px; /* Adjusted height to fit both header sections */
 }
 
 .upper-header {
@@ -26,8 +26,8 @@
 }
 
 .logo-image {
-  max-width: 128px;
-  max-height: 128px;
+  max-width: 90px;
+  max-height: 90px;
   margin-right: 10px;
   filter: brightness(0) invert(1);
 }
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
   flex-grow: 1;
 }
 
