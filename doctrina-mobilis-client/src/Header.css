@@ -1,6 +1,6 @@
 .toolbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0 1em;
   min-height: 128px; /* Adjusted height to fit both header sections */
 }
@@ -90,7 +90,7 @@
   }
 
   .upper-header, .lower-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
