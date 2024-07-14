@@ -13,7 +13,7 @@
 }
 
 .input-field .MuiOutlinedInput-root {
-  background-color: var(--custom-white);
+  background-color: var(--custom-white) !important;
   color: black;
 }
 
