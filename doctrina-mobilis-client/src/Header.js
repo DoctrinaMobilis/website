@@ -43,79 +43,64 @@ function Header() {
 
   return (
     <AppBar position="static">
-      <Toolbar className="toolbar">
-        <div className="left-section">
-          <img src={logo} alt="Website Logo" className="logo-image" />
-          <Typography variant="h4" className="title">
-            Doctrina mobilis
-          </Typography>
-        </div>
-        <div className="center-section">
-          <Button
-            color="inherit"
-            aria-controls="courses-menu"
-            aria-haspopup="true"
-            onClick={handleCoursesMenu}
-          >
-            Kurse
-          </Button>
-          <Menu
-            id="courses-menu"
-            anchorEl={coursesAnchorEl}
-            keepMounted
-            open={Boolean(coursesAnchorEl)}
-            onClose={handleCoursesClose}
-          >
-            <MenuItem onClick={handleCoursesClose} component="a" href="#echokardiographie">
-              Echokardiographie
-            </MenuItem>
-            <MenuItem onClick={handleCoursesClose} component="a" href="#ekg1">
-              EKG 1
-            </MenuItem>
-            <MenuItem onClick={handleCoursesClose} component="a" href="#ekg2">
-              EKG 2
-            </MenuItem>
-          </Menu>
-          <Button color="inherit" href="#faq">FAQ</Button>
-          <Button color="inherit" href="#kontakt">Kontakt</Button>
-        </div>
-        <div className="right-section user-section">
-          {!isLoggedIn ? (
-            <Login />
-          ) : (
-            <>
-              <IconButton
-                edge="end"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleProfileMenuOpen}
-                color="inherit"
-              >
-                <img src={defaultProfile} alt="Profile" className="profile-pic" />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={profileAnchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(profileAnchorEl)}
-                onClose={handleMenuClose}
-              >
-                <MenuItem onClick={handleProfile}>Profil verwalten</MenuItem>
-                <MenuItem onClick={logout}>Logout</MenuItem>
-              </Menu>
-            </>
-          )}
-        </div>
-      </Toolbar>
+      <div className="top-header">
+        <Toolbar className="toolbar">
+          <div className="left-section">
+            <img src={logo} alt="Website Logo" className="logo-image" />
+            <Typography variant="h4" className="title">
+              Doctrina mobilis
+            </Typography>
+          </div>
+          <div className="center-section">
+            <Button color="inherit" href="#kurse">Kurse</Button>
+            <Button color="inherit" href="#faq">FAQ</Button>
+            <Button color="inherit" href="#kontakt">Kontakt</Button>
+          </div>
+          <div className="right-section user-section">
+            {!isLoggedIn ? (
+              <Login />
+            ) : (
+              <>
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <img src={defaultProfile} alt="Profile" className="profile-pic" />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={profileAnchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={Boolean(profileAnchorEl)}
+                  onClose={handleMenuClose}
+                >
+                  <MenuItem onClick={handleProfile}>Profil verwalten</MenuItem>
+                  <MenuItem onClick={logout}>Logout</MenuItem>
+                </Menu>
+              </>
+            )}
+          </div>
+        </Toolbar>
+      </div>
+      <div className="bottom-header">
+        <Toolbar className="toolbar">
+          <Button color="inherit" href="#echokardiographie">Echokardiographie</Button>
+          <Button color="inherit" href="#ekg1">EKG 1</Button>
+          <Button color="inherit" href="#ekg2">EKG 2</Button>
+        </Toolbar>
+      </div>
     </AppBar>
   );
 }
