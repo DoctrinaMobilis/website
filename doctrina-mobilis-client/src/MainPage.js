@@ -1,4 +1,3 @@
-// src/MainPage.js
 import React from 'react';
 import './MainPage.css';
 import CourseNavigation from './CourseNavigation';
@@ -13,7 +12,7 @@ function MainPage() {
       <nav>
         <CourseNavigation />
       </nav>
-      <main>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<EinführungEchokardiographie />} />
           <Route path="/profile" element={<UserProfile />} />

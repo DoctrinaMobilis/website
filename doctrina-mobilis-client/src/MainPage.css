@@ -63,7 +63,6 @@ main {
   }
 }
 
-/* New breakpoint for mobile devices */
 @media (max-width: 600px) {
   header, nav, main, aside {
     padding: 0.5em;
@@ -83,4 +82,12 @@ main {
   .kurs-bereich {
     width: 100%;
   }
+}
+
+.main-content {
+  transition: margin-left 0.5s;
+}
+
+.main-content.shifted {
+  margin-left: 250px; /* Die Breite der Sidebar */
 }
