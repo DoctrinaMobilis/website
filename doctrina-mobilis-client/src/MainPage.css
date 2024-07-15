@@ -4,7 +4,7 @@
     "mainNav haupt aside"
     "mainNav haupt aside"
     "mainNav haupt aside";
-  grid-template-columns: auto 1fr 400px; /* Use a fixed size for the aside column */
+  grid-template-columns: auto 1fr 300px; /* Use a fixed size for the aside column */
   grid-template-rows: auto 1fr;
   gap: 0px;
   height: 100vh;
@@ -42,9 +42,9 @@ main.shifted {
 #termine {
   grid-area: aside;
   overflow-y: auto;
-  min-width: 400px; /* Set the minimum width */
-  max-width: 400px; /* Set the maximum width */
-  width: 400px; /* Set the width */
+  min-width: 300px; /* Set the minimum width */
+  max-width: 300px; /* Set the maximum width */
+  width: 300px; /* Set the width */
 }
 
 @media (max-width: 1000px) {
