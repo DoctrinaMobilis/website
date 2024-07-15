@@ -5,7 +5,7 @@
   min-height: 90px; /* Adjusted height to fit both header sections */
 }
 
-.upper-header, .lower-header {
+.upper-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +34,7 @@ flex-direction: row;
   white-space: nowrap;
 }
 
-.center-section, .lower-header {
+.center-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,8 +42,7 @@ flex-direction: row;
   flex-grow: 1;
 }
 
-.center-section .MuiButton-root,
-.lower-header .MuiButton-root {
+.center-section .MuiButton-root {
   font-size: 1em;
   padding: 0.5em 1em;
   font-weight: bold;
@@ -69,8 +68,7 @@ flex-direction: row;
     font-size: 1.2em;
   }
   
-  .center-section .MuiButton-root,
-  .lower-header .MuiButton-root {
+  .center-section .MuiButton-root {
     font-size: 0.9em;
   }
 
@@ -89,22 +87,16 @@ flex-direction: row;
     flex-direction: column;
   }
 
-  .lower-header {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
   .title {
     font-size: 1em;
   }
 
-  .center-section, .lower-header {
+  .center-section {
     flex-direction: row;
     gap: 0.5em;
   }
 
-  .center-section .MuiButton-root,
-  .lower-header .MuiButton-root {
+  .center-section .MuiButton-root {
     font-size: 0.8em;
     padding: 0.25em 0.5em;
   }
