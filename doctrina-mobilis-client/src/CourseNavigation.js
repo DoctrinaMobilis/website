@@ -7,10 +7,10 @@ import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import './CourseNavigation.css';
 
 const CourseNavigation = () => {
-  const [openEchokardiographie, setOpenEchokardiographie] = useState(false);
-  const [openEKG1, setOpenEKG1] = useState(false);
-  const [openEKG2, setOpenEKG2] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [openEchokardiographie, setOpenEchokardiographie] = useState(true);
+  const [openEKG1, setOpenEKG1] = useState(true);
+  const [openEKG2, setOpenEKG2] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const handleClick = (course) => {
     if (course === 'Echokardiographie') {
