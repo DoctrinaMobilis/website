@@ -6,11 +6,10 @@ import Collapse from '@mui/material/Collapse';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import './CourseNavigation.css';
 
-const CourseNavigation = () => {
+const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
   const [openEchokardiographie, setOpenEchokardiographie] = useState(true);
   const [openEKG1, setOpenEKG1] = useState(true);
   const [openEKG2, setOpenEKG2] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const handleClick = (course) => {
     if (course === 'Echokardiographie') {
@@ -20,10 +19,6 @@ const CourseNavigation = () => {
     } else if (course === 'EKG2') {
       setOpenEKG2(!openEKG2);
     }
-  };
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
   };
 
   return (

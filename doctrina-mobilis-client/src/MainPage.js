@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainPage.css';
 import CourseNavigation from './CourseNavigation';
 import Termine from './Termine';
@@ -7,12 +7,18 @@ import UserProfile from './UserProfile'; // Importiere die UserProfile-Komponent
 import { Route, Routes } from 'react-router-dom';
 
 function MainPage() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <div id="container">
+    <div id="container" className={sidebarOpen ? 'sidebar-open' : ''}>
       <nav>
-        <CourseNavigation />
+        <CourseNavigation toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
       </nav>
-      <main className="main-content">
+      <main className={`main-content ${sidebarOpen ? 'shifted' : ''}`}>
         <Routes>
           <Route path="/" element={<EinführungEchokardiographie />} />
           <Route path="/profile" element={<UserProfile />} />
