@@ -2,23 +2,14 @@
   display: flex;
   flex-direction: column;
   padding: 0 1em;
-  min-height: 90px;
-  max-height: 128px;
-  height: auto;
+  min-height: 90px; /* Adjusted height to fit both header sections */
 }
 
-.upper-header {
+.upper-header, .lower-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-}
-
-.lower-header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
 }
 
 .left-section {
@@ -28,19 +19,19 @@
 }
 
 .logo-image {
-  max-width: 90px;
-  max-height: 90px;
+  max-width: 70px;
+  max-height: 70px;
   margin-right: 10px;
   filter: brightness(0) invert(1);
 }
 
 .title {
   flex-grow: 1;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5em; /* Adjusted for responsive scaling */
   white-space: nowrap;
 }
 
-.center-section {
+.center-section, .lower-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,8 +39,9 @@
   flex-grow: 1;
 }
 
-.center-section .MuiButton-root {
-  font-size: 1.2em;
+.center-section .MuiButton-root,
+.lower-header .MuiButton-root {
+  font-size: 1em;
   padding: 0.5em 1em;
   font-weight: bold;
   white-space: nowrap;
@@ -62,66 +54,56 @@
   gap: 1em;
 }
 
-.right-section a {
-  color: var(--custom-white);
-}
-
-.user-section {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-}
-
-.user-section Button {
-  font-weight: bold;
-  background-color: var(--accept-color) !important;
-}
-
 .profile-pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 40%;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
   object-fit: cover;
 }
 
-.lower-header .MuiButton-root {
-  font-size: 1.2em;
-  padding: 0.5em 1em;
-}
-
-@media (max-width: 600px) {
-  .toolbar {
-    min-height: 64px;
+@media (max-width: 900px) {
+  .title {
+    font-size: 1.2em;
   }
-
-  .upper-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .center-section {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-
-  .right-section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .lower-header {
-    flex-direction: column;
-    align-items: flex-start;
+  
+  .center-section .MuiButton-root,
+  .lower-header .MuiButton-root {
+    font-size: 0.9em;
   }
 
   .profile-pic {
     width: 40px;
     height: 40px;
   }
+}
+
+@media (max-width: 600px) {
+  .toolbar {
+    padding: 0 0.5em;
+  }
+  
+  .upper-header, .lower-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1em;
+  }
+
+  .center-section, .lower-header {
+    flex-direction: column;
+    gap: 0.5em;
+  }
 
   .center-section .MuiButton-root,
   .lower-header .MuiButton-root {
-    font-size: 1em;
+    font-size: 0.8em;
     padding: 0.25em 0.5em;
+  }
+
+  .profile-pic {
+    width: 30px;
+    height: 30px;
   }
 }
