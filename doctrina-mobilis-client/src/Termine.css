@@ -4,7 +4,8 @@
   overflow-y: auto;
   height: 100%;
   border-radius: 15px;
-  align-self: flex-start;
+  max-width: 300px;
+  width: 300px;
 }
 
 .termin-kachel {
