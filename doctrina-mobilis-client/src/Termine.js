@@ -1,55 +1,162 @@
-import React, { useState, useEffect } from 'react';
-import './Termine.css';
-import axios from 'axios';
-import dayjs from 'dayjs';
-import 'dayjs/locale/de'; // Für deutsche Wochentage
+#container {
+  display: grid;
+  grid-template-areas: 
+    "haupt aside"
+    "haupt aside"
+    "haupt aside";
+  grid-template-columns: auto 300px; /* Fixed size for the aside column */
+  grid-template-rows: auto 1fr;
+  gap: 0px;
+  height: 100vh;
+}
 
-dayjs.locale('de'); // Setze die Locale auf Deutsch
+body {
+  background-color: var(--secondary-color);
+  margin: 0; /* Ensure no default margin on body */
+}
 
-const Termine = () => {
-  const [termine, setTermine] = useState([]);
+header, nav, main, aside {
+  border: 1px solid var(--custom-white);
+  background-color: var(--secondary-color);
+  padding: 1em;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
 
-  useEffect(() => {
-    axios.get('/api/termine')
-      .then(response => {
-        // Überprüfen, ob die API-Antwort ein Array ist
-        if (Array.isArray(response.data)) {
-          setTermine(response.data);
-        } else {
-          console.error('Unexpected response format:', response.data);
-          setTermine([]); // Setze den Zustand auf ein leeres Array, wenn die Antwort kein Array ist
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        setTermine([]); // Setze den Zustand auf ein leeres Array im Fehlerfall
-      });
-  }, []);
+nav {
+  grid-area: mainNav;
+  overflow-y: auto;
+}
 
-  return (
-    <aside id="termine" className="termine">
-      {Array.isArray(termine) && termine.length > 0 ? (
-        termine.map((termin) => {
-          const datum = dayjs(termin.datum);
-          return (
-            <div key={termin.id} className="termin-kachel">
-              <div className="datum-bereich">
-                <div className="wochentag">{datum.format('dd').toUpperCase()}</div>
-                <div className="datum">{datum.format('DD.MM.YYYY')}</div>
-                <div className="uhrzeit">{termin.uhrzeit}</div>
-              </div>
-              <div className="kurs-bereich">
-              <div className="kursname">{termin.Kurs ? termin.Kurs.kursname : 'Kein Kursname'}</div>
-                <div className="ort">{termin.ort}</div>
-              </div>
-            </div>
-          );
-        })
-      ) : (
-        <p>Keine Termine gefunden.</p>
-      )}
-    </aside>
-  );
-};
+main {
+  grid-area: haupt;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: margin-left 0.5s;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
 
-export default Termine;
+main.shifted {
+  margin-left: 250px; /* Adjust the value based on the width of the sidebar */
+}
+
+#termine {
+  grid-area: aside;
+  overflow-y: auto;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  width: 300px; /* Fixed width to ensure it matches the grid template */
+}
+
+@media (max-width: 1000px) {
+  #container {
+    grid-template-areas: 
+      "haupt haupt"
+      "haupt haupt"
+      "haupt haupt";
+    grid-template-columns: 1fr;
+  }
+
+  #termine {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  #container {
+    grid-template-areas: 
+      "haupt haupt"
+      "haupt haupt"
+      "haupt haupt";
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  header, nav, main, aside {
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  .termin-kachel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .datum-bereich {
+    margin-right: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .kurs-bereich {
+    width: 100%;
+  }
+}
+
+.course-navigation {
+  width: 250px;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 180px; /* Adjust this if necessary to match header height */
+  left: -250px;
+  height: calc(100% - 180px); /* Adjust this if necessary to match header height */
+  background-color: var(--secondary-color) !important;
+  z-index: 1000;
+}
+
+.course-navigation.open {
+  left: 0;
+}
+
+.course-navigation .toggle-button {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--secondary-color) !important;
+  color: black !important;
+  padding: 10px 15px;
+  border: 1px;
+  border-radius: 15px;
+  position: fixed;
+  top: 130px; /* Adjust this if necessary to match header height */
+  left: 10px;
+  z-index: 1001;
+  transition: background-color 0.3s ease;
+}
+
+.course-navigation .toggle-button:hover {
+  background-color: var(--accent-color) !important;
+}
+
+.course-navigation .chapter-name .MuiListItemText-primary {
+  font-weight: bold !important;
+}
+
+.course-navigation .subchapter-item {
+  padding-left: 32px;
+}
+
+.course-navigation a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.course-navigation a:hover {
+  color: var(--custom-white) !important;
+}
+
+.main-content {
+  transition: margin-left 0.5s;
+}
+
+.shifted {
+  margin-left: 250px;
+}

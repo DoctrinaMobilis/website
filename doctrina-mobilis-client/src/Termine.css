@@ -4,7 +4,6 @@
   overflow-y: auto;
   height: 100%;
   border-radius: 15px;
-  width: 100%; /* Ensure it fits within the 300px container */
   box-sizing: border-box; /* Include padding in the width */
 }
 
@@ -17,8 +16,8 @@
   background-color: var(--custom-white);
   color: var(--text-color);
   border-radius: 15px;
-  width: 100%; /* Ensure it fits within the container */
   box-sizing: border-box; /* Include padding in the width */
+  width: 100%; /* Ensure it fits within the container */
 }
 
 .datum-bereich {
