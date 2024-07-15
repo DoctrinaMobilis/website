@@ -1,10 +1,10 @@
 #container {
   display: grid;
   grid-template-areas: 
-    "mainNav haupt aside"
-    "mainNav haupt aside"
-    "mainNav haupt aside";
-  grid-template-columns: auto 1fr 300px; /* Use a fixed size for the aside column */
+    "haupt aside"
+    "haupt aside"
+    "haupt aside";
+  grid-template-columns: auto 300px; /* Use a fixed size for the aside column */
   grid-template-rows: auto 1fr;
   gap: 0px;
   height: 100vh;
@@ -50,9 +50,9 @@ main.shifted {
 @media (max-width: 1000px) {
   #container {
     grid-template-areas: 
-      "haupt haupt haupt"
-      "haupt haupt haupt"
-      "haupt haupt haupt";
+      "haupt haupt"
+      "haupt haupt"
+      "haupt haupt";
     grid-template-columns: 1fr;
   }
 
@@ -64,9 +64,9 @@ main.shifted {
 @media (max-width: 800px) {
   #container {
     grid-template-areas: 
-      "haupt haupt haupt"
-      "haupt haupt haupt"
-      "haupt haupt haupt";
+      "haupt haupt"
+      "haupt haupt"
+      "haupt haupt";
     grid-template-columns: 1fr;
   }
 
