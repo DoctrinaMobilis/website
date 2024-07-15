@@ -92,11 +92,6 @@ function Header() {
             )}
           </div>
         </div>
-        <div className="lower-header">
-          <Button color="inherit" href="#echokardiographie">Echokardiographie</Button>
-          <Button color="inherit" href="#ekg1">EKG 1</Button>
-          <Button color="inherit" href="#ekg2">EKG 2</Button>
-        </div>
       </Toolbar>
     </AppBar>
   );
