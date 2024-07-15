@@ -30,7 +30,7 @@
   background-color: var(--primary-color) !important;
 }
 
-.course-navigation .chapter-name {
+.course-navigation .chapter-name .MuiListItemText-primary {
   font-weight: bold !important;
 }
 
