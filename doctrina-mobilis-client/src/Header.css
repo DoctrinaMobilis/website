@@ -3,6 +3,7 @@
   flex-direction: row;
   padding: 0 1em;
   min-height: 90px; /* Adjusted height to fit both header sections */
+  background-color: var(--secondary-color) !important;
 }
 
 .upper-header {
