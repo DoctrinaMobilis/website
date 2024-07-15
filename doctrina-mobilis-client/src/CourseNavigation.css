@@ -16,18 +16,20 @@
 .course-navigation .toggle-button {
   font-size: 20px;
   cursor: pointer;
-  background-color: var(--primary-color) !important;
+  background-color: var(--accent-color) !important;
   color: var(--custom-white) !important;
   padding: 10px 15px;
   border: none;
+  border-radius: 15px;
   position: fixed;
   top: 113px; /* Höhe des Headers berücksichtigen */
   left: 10px;
   z-index: 1001;
+  transition: background-color 0.3s ease;
 }
 
 .course-navigation .toggle-button:hover {
-  background-color: var(--primary-color) !important;
+  background-color: var(--accent-color) !important;
 }
 
 .course-navigation .chapter-name .MuiListItemText-primary {
