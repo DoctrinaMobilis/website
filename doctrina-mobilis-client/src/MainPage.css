@@ -4,7 +4,7 @@
     "haupt aside"
     "haupt aside"
     "haupt aside";
-  grid-template-columns: auto 300px; /* Fixed size for the aside column */
+  grid-template-columns: auto 350px; /* Fixed size for the aside column */
   grid-template-rows: auto 1fr;
   gap: 0px;
   height: 100vh;
@@ -44,7 +44,7 @@ main.shifted {
 #termine {
   grid-area: aside;
   overflow-y: auto;
-  width: 300px; /* Fixed width to ensure it matches the grid template */
+  width: 350px; /* Fixed width to ensure it matches the grid template */
 }
 
 @media (max-width: 1000px) {
