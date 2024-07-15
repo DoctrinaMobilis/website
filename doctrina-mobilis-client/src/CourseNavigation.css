@@ -21,13 +21,13 @@
   padding: 10px 15px;
   border: none;
   position: fixed;
-  top: 118px; /* Höhe des Headers berücksichtigen */
+  top: 115px; /* Höhe des Headers berücksichtigen */
   left: 10px;
   z-index: 1001;
 }
 
 .course-navigation .toggle-button:hover {
-  background-color: var(--secondary-color) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .course-navigation a {
