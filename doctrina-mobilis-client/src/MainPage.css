@@ -20,7 +20,7 @@ header, nav, main, aside {
   background-color: var(--secondary-color);
   padding: 1em;
   text-align: center;
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  
 }
 
 nav {
