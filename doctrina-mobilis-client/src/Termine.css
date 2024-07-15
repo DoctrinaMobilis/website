@@ -3,6 +3,7 @@
   background-color: var(--accent-color);
   overflow-y: auto;
   height: 100%;
+  border-radius: 15px;
 }
 
 .termin-kachel {
@@ -13,6 +14,7 @@
   padding: 1em;
   background-color: var(--custom-white);
   color: var(--text-color);
+  border-radius: 15px;
 }
 
 .datum-bereich {
