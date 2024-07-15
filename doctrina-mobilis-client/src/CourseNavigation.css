@@ -2,9 +2,9 @@
   width: 250px;
   transition: all 0.3s ease;
   position: fixed;
-  top: 180px; /* Adjust according to your header height */
+  top: 180px;
   left: -250px;
-  height: calc(100% - 180px); /* Adjust according to your header height */
+  height: calc(100% - 180px);
   background-color: var(--secondary-color) !important;
   z-index: 1000;
 }
@@ -19,10 +19,10 @@
   background-color: var(--secondary-color) !important;
   color: black !important;
   padding: 10px 15px;
-  border: 1px solid black;
+  border: 1px;
   border-radius: 15px;
   position: fixed;
-  top: 130px; /* Adjust according to your header height */
+  top: 130px;
   left: 10px;
   z-index: 1001;
   transition: background-color 0.3s ease;
@@ -51,4 +51,12 @@
 
 .course-navigation a:hover {
   color: var(--custom-white) !important;
+}
+
+.main-content {
+  transition: margin-left 0.5s;
+}
+
+.shifted {
+  margin-left: 250px;
 }

@@ -3,7 +3,7 @@ import './MainPage.css';
 import CourseNavigation from './CourseNavigation';
 import Termine from './Termine';
 import EinführungEchokardiographie from './EinführungEchokardiographie';
-import UserProfile from './UserProfile'; // Importiere die UserProfile-Komponente
+import UserProfile from './UserProfile';
 import { Route, Routes } from 'react-router-dom';
 
 function MainPage() {
