@@ -17,7 +17,7 @@
   font-size: 20px;
   cursor: pointer;
   background-color: var(--secondary-color) !important;
-  color: var(--custom-white) !important;
+  color: black !important;
   padding: 10px 15px;
   border: 1px;
   border-radius: 15px;
