@@ -33,15 +33,15 @@ const CourseNavigation = () => {
       </button>
       <List component="nav">
         <ListItem button onClick={() => handleClick('Echokardiographie')}>
-          <ListItemText className="course" primary="Echokardiographie" />
+          <ListItemText primary="Echokardiographie" className="chapter-name" />
           {openEchokardiographie ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={openEchokardiographie} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button>
+            <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 1: Einführung" />
             </ListItem>
-            <ListItem button>
+            <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 2: Grundlagen" />
             </ListItem>
             {/* Weitere Kapitel */}
@@ -49,15 +49,15 @@ const CourseNavigation = () => {
         </Collapse>
 
         <ListItem button onClick={() => handleClick('EKG1')}>
-          <ListItemText className="course" primary="EKG 1" />
+          <ListItemText primary="EKG 1" className="chapter-name" />
           {openEKG1 ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={openEKG1} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button>
+            <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 1: Einführung" />
             </ListItem>
-            <ListItem button>
+            <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 2: Grundlagen" />
             </ListItem>
             {/* Weitere Kapitel */}
@@ -65,15 +65,15 @@ const CourseNavigation = () => {
         </Collapse>
 
         <ListItem button onClick={() => handleClick('EKG2')}>
-          <ListItemText className="course" primary="EKG 2" />
+          <ListItemText primary="EKG 2" className="chapter-name" />
           {openEKG2 ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={openEKG2} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button>
+            <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 1: Einführung" />
             </ListItem>
-            <ListItem button>
+            <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 2: Grundlagen" />
             </ListItem>
             {/* Weitere Kapitel */}
