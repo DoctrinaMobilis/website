@@ -16,6 +16,7 @@
 .input-field .MuiOutlinedInput-root {
   background-color: var(--custom-white) !important;
   color: black;
+  height: auto;
 }
 
 .login-button  {
@@ -51,6 +52,7 @@
   .input-field .MuiOutlinedInput-root {
     font-size: 0.8rem; /* Even smaller font size */
     padding: 0.3em; /* Even smaller padding */
+    height: 40px;
   }
   
   .login-button {
