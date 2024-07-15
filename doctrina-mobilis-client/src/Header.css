@@ -83,7 +83,7 @@
   }
   
   .upper-header, .lower-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 
@@ -92,7 +92,7 @@
   }
 
   .center-section, .lower-header {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5em;
   }
 
