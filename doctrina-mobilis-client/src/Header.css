@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   padding: 0 1em;
-  min-height: 90px; /* Adjusted height to fit both header sections */
+  min-height: 90px;
   max-height: 128px;
-  height: 128px;
+  height: auto;
 }
 
 .upper-header {
@@ -36,6 +36,8 @@
 
 .title {
   flex-grow: 1;
+  font-size: calc(10px + 2vmin);
+  white-space: nowrap;
 }
 
 .center-section {
@@ -47,9 +49,10 @@
 }
 
 .center-section .MuiButton-root {
-  font-size: 1.5em;
-  padding: 0.75em 1.5em;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .right-section {
@@ -91,18 +94,34 @@
     min-height: 64px;
   }
 
-  .upper-header, .lower-header {
-    flex-direction: row;
-    align-items: center;
+  .upper-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .center-section {
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
+  }
+
+  .right-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lower-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .profile-pic {
     width: 40px;
     height: 40px;
+  }
+
+  .center-section .MuiButton-root,
+  .lower-header .MuiButton-root {
+    font-size: 1em;
+    padding: 0.25em 0.5em;
   }
 }
