@@ -10,10 +10,11 @@
   flex-direction: row;
   gap: 1em;
   width: 100%;
+  background-color: var(--warning-color) !important;
 }
 
 .input-field .MuiOutlinedInput-root {
-  background-color: var(--custom-white) !important;
+  background-color: var(--accept-color) !important;
   color: black;
 }
 
