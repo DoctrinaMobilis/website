@@ -16,12 +16,12 @@
 .course-navigation .toggle-button {
   font-size: 20px;
   cursor: pointer;
-  background-color: var(--secondary-color) !important;
+  background-color: var(--primary-color) !important;
   color: var(--custom-white) !important;
   padding: 10px 15px;
   border: none;
   position: fixed;
-  top: 120px; /* Höhe des Headers berücksichtigen */
+  top: 118px; /* Höhe des Headers berücksichtigen */
   left: 10px;
   z-index: 1001;
 }
