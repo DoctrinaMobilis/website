@@ -11,6 +11,9 @@
   align-items: center;
   width: 100%;
 }
+.upper-header {
+flex-direction: row;
+}
 
 .left-section {
   display: flex;
@@ -82,7 +85,11 @@
     padding: 0 0.5em;
   }
   
-  .upper-header, .lower-header {
+  .upper-header {
+    flex-direction: column;
+  }
+
+  .lower-header {
     flex-direction: row;
     align-items: flex-start;
   }
