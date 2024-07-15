@@ -46,13 +46,15 @@
 }
 
 /* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  .login form {
-    flex-direction: column;
-  }
+@media (max-width: 1100px) {
 
+  .input-field .MuiOutlinedInput-root {
+    font-size: 0.8rem; /* Even smaller font size */
+    padding: 0.3em; /* Even smaller padding */
+  }
+  
   .login-button {
-    font-size: 0.9rem; /* Smaller font size on smaller screens */
+    font-size: 0.8rem; /* Smaller font size on smaller screens */
   }
 
   .register-link {
