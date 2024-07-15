@@ -45,6 +45,7 @@ main.shifted {
   min-width: 300px; /* Ensure it matches the grid template */
   max-width: 300px; /* Ensure it matches the grid template */
   width: 300px; /* Ensure it matches the grid template */
+  box-sizing: border-box; /* Include padding in the width */
 }
 
 @media (max-width: 1000px) {

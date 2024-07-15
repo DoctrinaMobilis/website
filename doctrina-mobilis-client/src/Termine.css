@@ -17,6 +17,8 @@
   background-color: var(--custom-white);
   color: var(--text-color);
   border-radius: 15px;
+  width: 100%; /* Ensure it fits within the container */
+  box-sizing: border-box; /* Include padding in the width */
 }
 
 .datum-bereich {
