@@ -2,9 +2,9 @@
   width: 250px;
   transition: all 0.3s ease;
   position: fixed;
-  top: 162px; /* Höhe des Headers berücksichtigen */
-  left: -250px;
-  height: calc(100% - 162px); /* Höhe des Headers berücksichtigen */
+  top: 180px; /* Höhe des Headers berücksichtigen */
+  left: -20px;
+  height: calc(100% - 180px); /* Höhe des Headers berücksichtigen */
   background-color: var(--secondary-color) !important;
   z-index: 1000;
 }
@@ -16,13 +16,13 @@
 .course-navigation .toggle-button {
   font-size: 20px;
   cursor: pointer;
-  background-color: var(--accent-color) !important;
+  background-color: var(--secondary-color) !important;
   color: var(--custom-white) !important;
   padding: 10px 15px;
-  border: none;
+  border: 1px;
   border-radius: 15px;
   position: fixed;
-  top: 113px; /* Höhe des Headers berücksichtigen */
+  top: 130px; /* Höhe des Headers berücksichtigen */
   left: 10px;
   z-index: 1001;
   transition: background-color 0.3s ease;
