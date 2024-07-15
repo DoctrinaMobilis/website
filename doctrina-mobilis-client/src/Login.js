@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -21,7 +22,7 @@ function Login() {
         },
         body: JSON.stringify({ username, password })
       });
-  
+
       const data = await response.json();
       console.log('Response data:', data);
       if (response.ok) {
@@ -35,7 +36,6 @@ function Login() {
       console.error('Error:', error);
     }
   };
-  
 
   return (
     <div className="login">

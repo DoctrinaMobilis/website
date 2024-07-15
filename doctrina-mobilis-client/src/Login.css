@@ -1,3 +1,4 @@
+/* Login.css */
 .login {
   display: flex;
   flex-direction: column;
@@ -18,9 +19,10 @@
 }
 
 .login-button  {
-  background-color: var(--accept-color)!important;
+  background-color: var(--accept-color) !important;
   color: var(--custom-white) !important;
   font-weight: bold !important;
+  font-size: 1rem; /* Default font size */
 }
 
 .login-button:hover {
@@ -41,4 +43,29 @@
 
 .register-link:hover {
   text-decoration: underline;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .login form {
+    flex-direction: column;
+  }
+
+  .login-button {
+    font-size: 0.9rem; /* Smaller font size on smaller screens */
+  }
+
+  .register-link {
+    font-size: 0.75rem; /* Smaller font size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-button {
+    font-size: 0.8rem; /* Even smaller font size on very small screens */
+  }
+
+  .register-link {
+    font-size: 0.7rem; /* Even smaller font size on very small screens */
+  }
 }
