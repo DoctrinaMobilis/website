@@ -1,4 +1,3 @@
-// src/CourseNavigation.js
 import React, { useState } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -11,6 +10,7 @@ const CourseNavigation = () => {
   const [openEchokardiographie, setOpenEchokardiographie] = useState(false);
   const [openEKG1, setOpenEKG1] = useState(false);
   const [openEKG2, setOpenEKG2] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleClick = (course) => {
     if (course === 'Echokardiographie') {
@@ -22,12 +22,16 @@ const CourseNavigation = () => {
     }
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <div className="course-navigation">
-      <List
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-      >
+    <div className={`course-navigation ${sidebarOpen ? 'open' : ''}`}>
+      <button className="toggle-button" onClick={toggleSidebar}>
+        ☰ Menü
+      </button>
+      <List component="nav">
         <ListItem button onClick={() => handleClick('Echokardiographie')}>
           <ListItemText primary="Echokardiographie" />
           {openEchokardiographie ? <ExpandLess /> : <ExpandMore />}

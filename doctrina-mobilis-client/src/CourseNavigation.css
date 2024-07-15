@@ -1,23 +1,62 @@
 .course-navigation {
-  width: 100%;
-  max-width: 360px;
-  overflow-y: auto;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 250px;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  background-color: #111;
+  padding-top: 60px;
+  z-index: 1000;
 }
 
-/* List background color */
-.course-navigation .MuiList-root {
-  background-color: var(--accent-color);
+.course-navigation.open {
+  left: 0;
 }
 
-/* Make courses bold */
-.course-navigation .MuiListItem-root {
-  font-weight: bold;
+.course-navigation .toggle-button {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  position: absolute;
+  top: 10px;
+  left: 260px;
+  z-index: 1001;
 }
 
-/* Ensure nested items are not bold */
-.course-navigation .MuiCollapse-root .MuiListItem-root {
-  font-weight: normal;
-  padding-left: 32px; /* Indent nested items */
-  background-color: var(--secondary-color);
+.course-navigation .toggle-button:hover {
+  background-color: #444;
+}
+
+.course-navigation a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.course-navigation a:hover {
+  color: #f1f1f1;
+}
+
+.course-navigation .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.main-content {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+.shift {
+  margin-left: 250px;
 }
