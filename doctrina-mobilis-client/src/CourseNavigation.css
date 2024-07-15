@@ -26,6 +26,10 @@
   z-index: 1001;
 }
 
+.course {
+  font-weight: bold;
+}
+
 .course-navigation .toggle-button:hover {
   background-color: var(--primary-color) !important;
 }

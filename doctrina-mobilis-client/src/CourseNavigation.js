@@ -32,7 +32,7 @@ const CourseNavigation = () => {
         ☰ Kapitel
       </button>
       <List component="nav">
-        <ListItem button onClick={() => handleClick('Echokardiographie')}>
+        <ListItem button className="course" onClick={() => handleClick('Echokardiographie')}>
           <ListItemText primary="Echokardiographie" />
           {openEchokardiographie ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
@@ -48,7 +48,7 @@ const CourseNavigation = () => {
           </List>
         </Collapse>
 
-        <ListItem button onClick={() => handleClick('EKG1')}>
+        <ListItem button className="course" onClick={() => handleClick('EKG1')}>
           <ListItemText primary="EKG 1" />
           {openEKG1 ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
@@ -64,7 +64,7 @@ const CourseNavigation = () => {
           </List>
         </Collapse>
 
-        <ListItem button onClick={() => handleClick('EKG2')}>
+        <ListItem button className="course" onClick={() => handleClick('EKG2')}>
           <ListItemText primary="EKG 2" />
           {openEKG2 ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
