@@ -2,9 +2,9 @@
   width: 250px;
   transition: all 0.3s ease;
   position: fixed;
-  top: 160px; /* Höhe des Headers berücksichtigen */
+  top: 162px; /* Höhe des Headers berücksichtigen */
   left: -250px;
-  height: calc(100% - 160px); /* Höhe des Headers berücksichtigen */
+  height: calc(100% - 162px); /* Höhe des Headers berücksichtigen */
   background-color: var(--secondary-color) !important;
   z-index: 1000;
 }
@@ -21,7 +21,7 @@
   padding: 10px 15px;
   border: none;
   position: fixed;
-  top: 115px; /* Höhe des Headers berücksichtigen */
+  top: 113px; /* Höhe des Headers berücksichtigen */
   left: 10px;
   z-index: 1001;
 }
