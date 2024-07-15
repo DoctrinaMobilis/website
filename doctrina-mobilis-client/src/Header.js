@@ -1,4 +1,3 @@
-// src/Header.js
 import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -43,8 +42,8 @@ function Header() {
 
   return (
     <AppBar position="static">
-      <div className="top-header">
-        <Toolbar className="toolbar">
+      <Toolbar className="toolbar">
+        <div className="upper-header">
           <div className="left-section">
             <img src={logo} alt="Website Logo" className="logo-image" />
             <Typography variant="h4" className="title">
@@ -92,15 +91,13 @@ function Header() {
               </>
             )}
           </div>
-        </Toolbar>
-      </div>
-      <div className="bottom-header">
-        <Toolbar className="toolbar">
+        </div>
+        <div className="lower-header">
           <Button color="inherit" href="#echokardiographie">Echokardiographie</Button>
           <Button color="inherit" href="#ekg1">EKG 1</Button>
           <Button color="inherit" href="#ekg2">EKG 2</Button>
-        </Toolbar>
-      </div>
+        </div>
+      </Toolbar>
     </AppBar>
   );
 }
