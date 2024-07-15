@@ -5,7 +5,7 @@
   top: 160px; /* Höhe des Headers berücksichtigen */
   left: -250px;
   height: calc(100% - 160px); /* Höhe des Headers berücksichtigen */
-  background-color: #111;
+  background-color: var(--secondary-color) !important;
   z-index: 1000;
 }
 
@@ -16,18 +16,18 @@
 .course-navigation .toggle-button {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: var(--secondary-color) !important;
+  color: var(--custom-white) !important;
   padding: 10px 15px;
   border: none;
   position: fixed;
-  top: 160px; /* Höhe des Headers berücksichtigen */
+  top: 120px; /* Höhe des Headers berücksichtigen */
   left: 10px;
   z-index: 1001;
 }
 
 .course-navigation .toggle-button:hover {
-  background-color: #444;
+  background-color: var(--secondary-color) !important;
 }
 
 .course-navigation a {
@@ -40,7 +40,7 @@
 }
 
 .course-navigation a:hover {
-  color: #f1f1f1;
+  color: var(--custom-white) !important;
 }
 
 .main-content {
