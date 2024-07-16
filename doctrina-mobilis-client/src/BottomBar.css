@@ -9,6 +9,7 @@
     justify-content: left;
     z-index: 1000;
     height: 60px; /* Explicitly set the height */
+    display: none;
   }
   
   .menu-button {
@@ -23,5 +24,12 @@
   
   .menu-button:hover {
     background-color: var(--accent-color);
+  }
+
+  @media (max-width: 600px) {
+      
+    .bottom-bar {
+        display: block;
+    }
   }
   
