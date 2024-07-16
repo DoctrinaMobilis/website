@@ -1,10 +1,13 @@
+// src/BottomBar.js
 import React from 'react';
-import './BottomBar.css';
+import './BottomBar.css'; // Ensure this CSS file contains the .bottom-bar and .menu-button styles
 
 const BottomBar = ({ toggleSidebar }) => {
   return (
     <div className="bottom-bar">
-      <button onClick={toggleSidebar}>☰</button>
+      <button className="menu-button" onClick={toggleSidebar}>
+        ☰
+      </button>
     </div>
   );
 };
