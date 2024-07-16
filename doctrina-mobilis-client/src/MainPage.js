@@ -5,12 +5,14 @@ import Termine from './Termine';
 import EinführungEchokardiographie from './EinführungEchokardiographie';
 import UserProfile from './UserProfile';
 import { Route, Routes } from 'react-router-dom';
+import {toggleSidebar} from './CourseNavigation';
 
 function MainPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
+  const toggleSidebar_main = () => {
     setSidebarOpen(!sidebarOpen);
+    toggleSidebar();
   };
 
   return (
@@ -29,7 +31,7 @@ function MainPage() {
         <Termine />
       </aside>
       <div className="bottom-bar">
-        <button className="menu-button" onClick={toggleSidebar}>☰ Menü</button>
+        <button className="menu-button" onClick={toggleSidebar_main}>☰ Menü</button>
       </div>
     </div>
   );

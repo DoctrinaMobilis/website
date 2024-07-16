@@ -78,5 +78,5 @@ const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
     </div>
   );
 };
-
+export {toggleSidebar};
 export default CourseNavigation;
