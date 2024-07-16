@@ -69,10 +69,6 @@ main.shifted {
       "haupt haupt";
     grid-template-columns: 1fr;
   }
-
-  nav {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {
