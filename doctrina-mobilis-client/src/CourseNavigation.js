@@ -21,6 +21,8 @@ const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
     }
   };
 
+  export {toggleSidebar};
+
   return (
     <div className={`course-navigation ${sidebarOpen ? 'open' : ''}`}>
       <button className="toggle-button" onClick={toggleSidebar}>
@@ -78,5 +80,5 @@ const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
     </div>
   );
 };
-export {toggleSidebar};
+
 export default CourseNavigation;
