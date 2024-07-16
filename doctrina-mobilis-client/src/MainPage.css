@@ -54,6 +54,8 @@ main.shifted {
       "haupt haupt"
       "haupt haupt";
     grid-template-columns: 1fr;
+    width: 100%; /* Stelle sicher, dass das Container-Element die gesamte Breite einnimmt */
+    box-sizing: border-box; /* Stelle sicher, dass Padding und Border in der Breite enthalten sind */
   }
 
   #termine {
@@ -79,7 +81,6 @@ main.shifted {
 
   main {
     margin-bottom: 45px; /* Ensure main content is not hidden behind the bottom bar */
-    overflow: hidden; /* Prevent main content overflow */
   }
 
   .termin-kachel {
