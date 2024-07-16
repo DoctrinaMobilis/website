@@ -6,7 +6,19 @@ import Collapse from '@mui/material/Collapse';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import './CourseNavigation.css';
 
-const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
+// Define the function and state outside the component
+let sidebarOpen = false;
+const toggleSidebar = () => {
+  sidebarOpen = !sidebarOpen;
+  const mainContent = document.querySelector('.main-content');
+  if (sidebarOpen) {
+    mainContent.classList.add('shifted');
+  } else {
+    mainContent.classList.remove('shifted');
+  }
+};
+
+const CourseNavigation = () => {
   const [openEchokardiographie, setOpenEchokardiographie] = useState(true);
   const [openEKG1, setOpenEKG1] = useState(true);
   const [openEKG2, setOpenEKG2] = useState(true);
@@ -20,8 +32,6 @@ const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
       setOpenEKG2(!openEKG2);
     }
   };
-
-  export {toggleSidebar};
 
   return (
     <div className={`course-navigation ${sidebarOpen ? 'open' : ''}`}>
@@ -81,4 +91,5 @@ const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
   );
 };
 
+export { toggleSidebar };
 export default CourseNavigation;
