@@ -4,7 +4,7 @@ import './BottomBar.css';
 const BottomBar = ({ toggleSidebar }) => {
   return (
     <div className="bottom-bar">
-      <button onClick={toggleSidebar}>Toggle Sidebar</button>
+      <button onClick={toggleSidebar}>☰</button>
     </div>
   );
 };
