@@ -34,7 +34,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   transition: margin-left 0.5s;
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  /*box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 main.shifted {
@@ -172,6 +172,7 @@ main.shifted {
 .main-content {
   transition: margin-left 0.5s;
 }
+.nav 
 
 .shifted {
   margin-left: 250px;
