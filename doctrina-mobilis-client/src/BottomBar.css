@@ -14,7 +14,7 @@
   
   .menu-button {
     background: var(--accent-color);
-    color: var(--custom-white);
+    color: black;
     border: none;
     padding: 1em;
     border-radius: 15px;
