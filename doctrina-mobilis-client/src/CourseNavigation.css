@@ -60,3 +60,11 @@
 .shifted {
   margin-left: 250px;
 }
+
+@media (max-width: 600px) {
+
+  .toggle-button{
+    display: none;
+  }
+
+}
