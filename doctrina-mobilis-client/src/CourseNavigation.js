@@ -23,9 +23,6 @@ const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
 
   return (
     <div className={`course-navigation ${sidebarOpen ? 'open' : ''}`}>
-      <button className="toggle-button" onClick={toggleSidebar}>
-        ☰ Kapitel
-      </button>
       <List component="nav">
         <ListItem button onClick={() => handleClick('Echokardiographie')}>
           <ListItemText primary="Echokardiographie" className="chapter-name" />

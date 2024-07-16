@@ -28,6 +28,9 @@ function MainPage() {
         <h2>Termine</h2>
         <Termine />
       </aside>
+      <div className="bottom-bar">
+        <button className="menu-button" onClick={toggleSidebar}>☰ Menü</button>
+      </div>
     </div>
   );
 }
