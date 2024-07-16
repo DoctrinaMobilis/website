@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import './MainPage.css';
 import CourseNavigation from './CourseNavigation';
+import BottomBar from './BottomBar'; // Import BottomBar component
 import Termine from './Termine';
 import EinführungEchokardiographie from './EinführungEchokardiographie';
 import UserProfile from './UserProfile';
 import { Route, Routes } from 'react-router-dom';
-import {toggleSidebar} from './CourseNavigation';
 
 function MainPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar_main = () => {
+  const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
-    toggleSidebar();
+    const mainContent = document.querySelector('.main-content');
+    if (sidebarOpen) {
+      mainContent.classList.remove('shifted');
+    } else {
+      mainContent.classList.add('shifted');
+    }
   };
 
   return (
@@ -30,9 +35,7 @@ function MainPage() {
         <h2>Termine</h2>
         <Termine />
       </aside>
-      <div className="bottom-bar">
-        <button className="menu-button" onClick={toggleSidebar_main}>☰ Menü</button>
-      </div>
+      <BottomBar toggleSidebar={toggleSidebar} /> {/* Include BottomBar and pass the toggle function */}
     </div>
   );
 }

@@ -6,19 +6,7 @@ import Collapse from '@mui/material/Collapse';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import './CourseNavigation.css';
 
-// Define the function and state outside the component
-let sidebarOpen = false;
-const toggleSidebar = () => {
-  sidebarOpen = !sidebarOpen;
-  const mainContent = document.querySelector('.main-content');
-  if (sidebarOpen) {
-    mainContent.classList.add('shifted');
-  } else {
-    mainContent.classList.remove('shifted');
-  }
-};
-
-const CourseNavigation = () => {
+const CourseNavigation = ({ toggleSidebar, sidebarOpen }) => {
   const [openEchokardiographie, setOpenEchokardiographie] = useState(true);
   const [openEKG1, setOpenEKG1] = useState(true);
   const [openEKG2, setOpenEKG2] = useState(true);
@@ -51,7 +39,6 @@ const CourseNavigation = () => {
             <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 2: Grundlagen" />
             </ListItem>
-            {/* Weitere Kapitel */}
           </List>
         </Collapse>
 
@@ -67,7 +54,6 @@ const CourseNavigation = () => {
             <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 2: Grundlagen" />
             </ListItem>
-            {/* Weitere Kapitel */}
           </List>
         </Collapse>
 
@@ -83,7 +69,6 @@ const CourseNavigation = () => {
             <ListItem button className="subchapter-item">
               <ListItemText primary="Kapitel 2: Grundlagen" />
             </ListItem>
-            {/* Weitere Kapitel */}
           </List>
         </Collapse>
       </List>
@@ -91,5 +76,4 @@ const CourseNavigation = () => {
   );
 };
 
-export { toggleSidebar };
 export default CourseNavigation;
